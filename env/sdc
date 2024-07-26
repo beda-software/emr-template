@@ -1,0 +1,3 @@
+AIO_PORT=8081
+AIO_HOST=0.0.0.0
+MAPPER_REPOSITORY=http://host.docker.internal:3000

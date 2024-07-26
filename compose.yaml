@@ -1,0 +1,16 @@
+services:
+  fhirpath_mapping:
+    image: bedasoftware/fhirpath-extract:main
+    ports:
+    - '8090:8090'
+  sdc:
+    image: bedasoftware/fhir-sdc:develop
+    env_file:
+      - ./env/sdc
+    tty: true
+    environment:
+      - FHIRPATH_MAPPING_SERVICE=http://fhirpath_mapping:8090/parse-template
+      - BASE_URL=https://api.fhir.pm.sandbox.magentus.com/ebookings-magentus-beda
+    ports:
+    - '8081:8081'
+ 
