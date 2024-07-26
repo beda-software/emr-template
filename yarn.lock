@@ -3166,6 +3166,15 @@
     "@lingui/message-utils" "4.10.0"
     unraw "^3.0.0"
 
+"@lingui/core@^4.10.0":
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/@lingui/core/-/core-4.11.2.tgz#0d9d35e8ac975a6a7c910116e6153c5a49db37f2"
+  integrity sha512-5wFmpHeDbLXEqaEUwlayS4SoqrCbDI3/bVRlwhmdNCeUcUYWh+7dTDlQnp4tPek1x1dEppABIkdN/0qLDdKcBQ==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    "@lingui/message-utils" "4.11.2"
+    unraw "^3.0.0"
+
 "@lingui/format-po@4.10.0":
   version "4.10.0"
   resolved "https://registry.yarnpkg.com/@lingui/format-po/-/format-po-4.10.0.tgz#f86fbd093f832373ccd129effec31b1047771dc9"
@@ -3191,6 +3200,14 @@
   version "4.10.0"
   resolved "https://registry.yarnpkg.com/@lingui/message-utils/-/message-utils-4.10.0.tgz#2d575c5f2808b275c56495343b78c0b47d4443e6"
   integrity sha512-p9Z4L4//ef1jpwqUR0hnILPbbqhVOXkLktY/EsZ7LMmvn18yhq4FjCtGsrorclTcTdtl0l7bqW4iEpEqGW91Gw==
+  dependencies:
+    "@messageformat/parser" "^5.0.0"
+    js-sha256 "^0.10.1"
+
+"@lingui/message-utils@4.11.2":
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/@lingui/message-utils/-/message-utils-4.11.2.tgz#adabdf7c01261dcf59dc1e035ef4c6140bcae547"
+  integrity sha512-3oJk7ZKExk4NVa4d3CM0z0iNqIokaFOWeu7lYVzu0oEX7DP6OxNjlCAtObIhJCB0FdIPz8sXxhDkyDHFj+eIvw==
   dependencies:
     "@messageformat/parser" "^5.0.0"
     js-sha256 "^0.10.1"

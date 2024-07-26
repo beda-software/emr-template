@@ -1,12 +1,14 @@
 import { i18n } from '@lingui/core';
 import { en } from 'make-plural/plurals';
 
+import { messages as enMessagesEmr } from '@beda.software/emr/dist/locale/en/messages';
+
 import { messages as enMessages } from '../locale/en/messages';
 
 type locale = 'en';
 
 const localMap = {
-    en: enMessages,
+    en: { ...enMessagesEmr,...enMessages },
 };
 
 export const locales = {
