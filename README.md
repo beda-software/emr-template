@@ -8,8 +8,8 @@ git submodule update --init
 cp contrib/emr-config/config.local.js contrib/emr-config/config.js
 yarn
 
-yarn compile
 yarn extract
+yarn compile
 ```
 
 Every time when you make change in fhir-emr repository, you need to run `yarn prepare`.
