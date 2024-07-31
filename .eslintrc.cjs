@@ -57,6 +57,25 @@ module.exports = {
                 ignore: ['fhir/r4b'], // Fixes error: Unable to resolve path to module 'fhir/r4b'.
             },
         ],
+        'no-restricted-imports': [
+            'error',
+            {
+                patterns: [
+                    {
+                        group: ['**/contrib/aidbox-types'],
+                        message: 'Please use @beda.software/aidbox-types',
+                    },
+                    {
+                        group: ['**/contrib/fhir-emr'],
+                        message: 'Please use @beda.software/emr',
+                    },
+                    {
+                        group: ['**/contrib/emr-config'],
+                        message: 'Please use @beda.software/emr-config',
+                    },
+                ],
+            },
+        ],
         'import/order': [
             'error',
             {

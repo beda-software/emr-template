@@ -22,12 +22,11 @@
     "allowSyntheticDefaultImports": true,
 
     /* Modules */
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "src/*": ["./src/*"],
+      "src/*": ["./*"],
     },
   },
-  "include": ["src"],
-  "exclude": ["contrib/fhir-emr"],
+  "exclude": ["contrib"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
