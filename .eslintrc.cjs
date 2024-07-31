@@ -49,6 +49,8 @@ module.exports = {
         'string-to-lingui/t-call-in-function': 2,
         'import/default': 'off',
         'import/named': 'off',
+        'import/no-named-as-default': 'off',
+        'import/no-named-as-default-member': 'off',
         'import/no-unresolved': [
             2,
             {
@@ -70,11 +72,6 @@ module.exports = {
                     {
                         pattern: '@beda.software/**',
                         group: 'external',
-                        position: 'after',
-                    },
-                    {
-                        pattern: 'shared/**',
-                        group: 'internal',
                         position: 'after',
                     },
                     {
