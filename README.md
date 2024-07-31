@@ -109,3 +109,30 @@ yarn storybook
 
 The main storybook for Beda EMR also publicly available [here](https://master--64b7c5c51809d460dc448e6b.chromatic.com/).
 
+## Imports troubleshooting
+
+<b>1. If you face typescript/eslint error like</b>
+
+```js
+Module '"@beda.software/emr/utils"' has no exported member 'getPersonAge'
+```
+
+Make sure that `getPersonAge` was used somewhere in the Beda EMR or it was explicitly exported
+
+```js
+export * from './relative-date.ts';
+```
+
+<b> 2. If you face next eslint error when you import interface or type</b>
+
+```js
+Unable to resolve path to module '@beda.software/emr/dist/components/Dashboard/types'.(eslintimport/no-unresolved)
+
+```
+
+Make sure to add  `type` when for your import
+
+```js
+import type { Dashboard } from '@beda.software/emr/dist/components/Dashboard/types';
+
+
