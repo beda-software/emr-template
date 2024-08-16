@@ -1,0 +1,48 @@
+name: Build image and restart services
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
+      DISABLE_ESLINT_PLUGIN: true
+      NODE_OPTIONS: --max-old-space-size=4096
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Prepare config
+        run: cp contrib/emr-config/config.production.js contrib/emr-config/config.js
+      - name: Install deps
+        run: yarn install --network-concurrency 1
+      - run: yarn extract
+      - run: yarn compile
+      - run: yarn build
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Setup Docker builder
+        uses: docker/setup-buildx-action@v3
+      - run: docker run --rm --privileged tonistiigi/binfmt --install all
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push the Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
