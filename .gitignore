@@ -23,7 +23,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-src/locale/
+src/locale/*/*.ts
 build/
 tsconfig.node.tsbuildinfo
 vite.config.d.ts
