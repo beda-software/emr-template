@@ -1392,6 +1392,14 @@
     "@babel/helper-create-regexp-features-plugin" "^7.24.7"
     "@babel/helper-plugin-utils" "^7.24.7"
 
+"@babel/polyfill@^7.10.1":
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.12.1.tgz#1f2d6371d1261bbd961f3c5d5909150e12d0bd96"
+  integrity sha512-X0pi0V6gxLi6lFZpGmeNa4zxtwEmCs42isWLNjZZDE0Y8yVfgu0T2OAHlzBbdYlqbW/YXVvoBHpATEM+goCj8g==
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.4"
+
 "@babel/preset-env@^7.24.4":
   version "7.24.8"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.24.8.tgz#e0db94d7f17d6f0e2564e8d29190bc8cdacec2d1"
@@ -1662,6 +1670,27 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@beda.software/fhir-questionnaire@^0.1.0-alpha.18":
+  version "0.1.0-alpha.18"
+  resolved "https://registry.yarnpkg.com/@beda.software/fhir-questionnaire/-/fhir-questionnaire-0.1.0-alpha.18.tgz#8801878b6e4792eced04d553d8eb33276e11b5e1"
+  integrity sha512-T7y5rPy8zSwrW0durZ6OHM/fEHKO1ikr7Kt+qo9hTumGl1KrrNVm5tsieeCaZJR4VB74uoeUQQiOH0wmsSlfHw==
+  dependencies:
+    "@beda.software/fhir-react" "^1.11.1"
+    "@beda.software/remote-data" "^1.1.4"
+    "@hookform/resolvers" "^3.1.1"
+    "@lingui/core" "^4.3.0"
+    "@types/fhir" "^0.0.40"
+    "@types/lodash" "^4.14.202"
+    axios "^1.8.4"
+    fhirpath "^3.18.0"
+    lodash "^4.17.15"
+    moment "^2.30.1"
+    query-string "^7.1.1"
+    react-hook-form "^7.49.3"
+    sdc-qrf "^1.1.0-alpha.15"
+    tslib "^2.8.1"
+    yup "^1.2.0"
+
 "@beda.software/fhir-questionnaire@^0.1.0-alpha.3":
   version "0.1.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@beda.software/fhir-questionnaire/-/fhir-questionnaire-0.1.0-alpha.3.tgz#9d47d973c4c1a1d7c177fd9a94a85dd477873fbf"
@@ -1721,6 +1750,36 @@
   version "0.1.14"
   resolved "https://registry.yarnpkg.com/@beda.software/web-item-controls/-/web-item-controls-0.1.14.tgz#772de2468154c49fa4b59adbd5938de259d36cef"
   integrity sha512-Xrlv1zv+woshPD7OLDe92K53a36jiYwZkiMVjBHyhShTZsf63Vj5nYPKj8iUeHdSe0kQ6l0d3WjkYtyFJjO/4w==
+  dependencies:
+    "@ant-design/colors" "^7.0.0"
+    "@ant-design/icons" "^5.1.4"
+    "@beda.software/emr-config" "*"
+    "@beda.software/remote-data" "^1.1.4"
+    "@fullcalendar/core" "^6.1.15"
+    "@mdxeditor/editor" "^3.11.0"
+    aidbox-react "^1.11.2"
+    classnames "^2.3.2"
+    fhir "^4.10.3"
+    fhirpath "^3.18.0"
+    jose "^4.14.4"
+    lodash "^4.17.21"
+    moment "^2.29.4"
+    react-audio-voice-recorder "^2.2.0"
+    react-jsbarcode "1.0.1"
+    react-markdown "^9.0.1"
+    react-phone-input-2 "^2.15.1"
+    react-router-dom "^6.14.1"
+    react-select "^5.7.3"
+    recharts "^3.8.0"
+    rehype-raw "^7.0.0"
+    remark-directive "^4.0.0"
+    remark-gfm "^4.0.1"
+    yup "^1.7.0"
+
+"@beda.software/web-item-controls@^0.1.22":
+  version "0.1.24"
+  resolved "https://registry.yarnpkg.com/@beda.software/web-item-controls/-/web-item-controls-0.1.24.tgz#d10a85ed7296ea62e5de2e24d08e2a834678f167"
+  integrity sha512-ltDdz9T+kjnSfxN9DPHSe2KvLBQjjK5rNNZzJGUirzPF4YLolads34FScx6Go0kk/X8Xl65WIWHGAGIyu2441g==
   dependencies:
     "@ant-design/colors" "^7.0.0"
     "@ant-design/icons" "^5.1.4"
@@ -8099,6 +8158,11 @@ clean-stack@^2.0.0:
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
   integrity sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==
 
+clear-cut@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/clear-cut/-/clear-cut-2.0.2.tgz#082db32ecaa44a358a7b086852fe1d5480bbeed1"
+  integrity sha512-WVgn/gSejQ+0aoR8ucbKIdo6icduPZW6AbWwyUmAUgxy63rUYjwa5rj/HeoNPhf0/XPrl82X8bO/hwBkSmsFtg==
+
 cli-cursor@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-3.1.0.tgz#264305a7ae490d1d03bf0c9ba7c925d1753af307"
@@ -8390,6 +8454,11 @@ core-js-compat@^3.37.1:
   dependencies:
     browserslist "^4.23.0"
 
+core-js@^2.6.5:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
+  integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
+
 core-util-is@~1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
@@ -8477,6 +8546,14 @@ css-to-react-native@3.2.0:
     camelize "^1.0.0"
     css-color-keywords "^1.0.0"
     postcss-value-parser "^4.0.2"
+
+css-tree@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.1.3.tgz#eb4870fb6fd7707327ec95c2ff2ab09b5e8db91d"
+  integrity sha512-tRpdppF7TRazZrjJ6v3stzv93qxRcSsFmW6cX0Zm2NVKpxE1WV1HblnghVv9TreireHkqI/VDEsfolRF1p6y7Q==
+  dependencies:
+    mdn-data "2.0.14"
+    source-map "^0.6.1"
 
 css.escape@^1.5.1:
   version "1.5.1"
@@ -12750,6 +12827,11 @@ mdast-util-to-string@^4.0.0:
   dependencies:
     "@types/mdast" "^4.0.0"
 
+mdn-data@2.0.14:
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
+  integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -13768,6 +13850,17 @@ package-hash@^4.0.0:
     hasha "^5.0.0"
     lodash.flattendeep "^4.4.0"
     release-zalgo "^1.0.0"
+
+pagedjs@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/pagedjs/-/pagedjs-0.4.3.tgz#d8345d04a929867ca44daa2c0487fe40f7817e42"
+  integrity sha512-YtAN9JAjsQw1142gxEjEAwXvOF5nYQuDwnQ67RW2HZDkMLI+b4RsBE37lULZa9gAr6kDAOGBOhXI4wGMoY3raw==
+  dependencies:
+    "@babel/polyfill" "^7.10.1"
+    "@babel/runtime" "^7.21.0"
+    clear-cut "^2.0.2"
+    css-tree "^1.1.3"
+    event-emitter "^0.3.5"
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -15153,7 +15246,7 @@ regenerate@^1.4.2:
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.2.tgz#b9346d8827e8f5a32f7ba29637d398b69014848a"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
 
-regenerator-runtime@^0.13.7:
+regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
   integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
@@ -15616,10 +15709,21 @@ scroll-into-view-if-needed@^3.1.0:
   dependencies:
     compute-scroll-into-view "^3.0.2"
 
-sdc-qrf@1.1.0-alpha.3, sdc-qrf@^1.1.0-alpha.3:
+sdc-qrf@1.1.0-alpha.3:
   version "1.1.0-alpha.3"
   resolved "https://registry.yarnpkg.com/sdc-qrf/-/sdc-qrf-1.1.0-alpha.3.tgz#f9f78a8f7c128913c1d926f118632852a5ef64eb"
   integrity sha512-eViWHXXOAdHiauD1X+gUT+IjzoxNhORaHGv5SGsTvQlZHz9ACxQsr7ZPtQyAYMbD5zr6jccpl0PqkPmaJgJKQA==
+  dependencies:
+    classnames "^2.5.1"
+    fhirpath "^3.18.0"
+    lodash "^4.17.21"
+    query-string "^7.1.1"
+    uuid "^11.1.0"
+
+sdc-qrf@^1.1.0-alpha.15:
+  version "1.1.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/sdc-qrf/-/sdc-qrf-1.1.0-alpha.15.tgz#61cebfea1df4eb1465e7d54771d077ab19120bb7"
+  integrity sha512-TJb1Bctng6aEFqwG2HmduUcOB4j+giXZngECoQI5dvg+BJmv9yQwQ30JgUVVs62ZiTziktzScx1E4aB/wIaVWw==
   dependencies:
     classnames "^2.5.1"
     fhirpath "^3.18.0"
