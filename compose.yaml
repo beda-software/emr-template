@@ -67,7 +67,7 @@ services:
     command:
       - watch
       - --external-fhir-server-url
-      - http://root:secret@devbox:8080
+      - http://root:secret@devbox:8080/fhir
       - --external-questionnaire-fce-fhir-converter-url
       - http://questionnaire-fce-fhir-converter:3000/to-fhir
     env_file:
