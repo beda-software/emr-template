@@ -1,0 +1,11 @@
+resourceType: Patient
+id: mother-1
+identifier:
+  - system: "urn:beda:mother-mrn"
+    value: "MRN-0001"
+name:
+  - family: "Al Mansoori"
+    given: ["Fatima"]
+gender: female
+birthDate: "1992-04-15"
+active: true
