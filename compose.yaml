@@ -1,0 +1,89 @@
+services:
+  database:
+    image: "postgres:18"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: devbox
+
+  devbox:
+    image: healthsamurai/aidboxone:stable
+    depends_on:
+      database:
+        condition: service_started
+      build-seeds-init:
+        condition: service_completed_successfully
+    links:
+      - "database"
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./env/aidbox
+      - .env
+    volumes:
+      - ./config:/var/config:cached
+      - ./resources/init-bundles:/resources/init-bundles
+
+  devbox-healthcheck:
+    image: curlimages/curl
+    entrypoint: /bin/sleep 10000
+    links:
+      - devbox
+    depends_on:
+      - devbox
+    healthcheck:
+      test: curl --fail http://devbox:8080/health || exit 1
+      interval: 5s
+      timeout: 30s
+      retries: 100
+
+  questionnaire-fce-fhir-converter:
+    image: bedasoftware/questionnaire-fce-fhir-converter:latest
+    healthcheck:
+      test: curl --fail http://localhost:3000/health || exit 1
+      interval: 5s
+      timeout: 30s
+      retries: 50
+
+  build-seeds-init:
+    image: bedasoftware/fhirsnake:latest
+    command:
+      - export
+      - --output
+      - /app/init-bundles/initBundle.json
+      - --external-questionnaire-fce-fhir-converter-url
+      - http://questionnaire-fce-fhir-converter:3000/to-fhir
+    env_file:
+      - ./env/build-seeds
+    depends_on:
+      questionnaire-fce-fhir-converter:
+        condition: service_healthy
+    volumes:
+      - ./resources/init-seeds:/app/resources
+      - ./resources/init-bundles:/app/init-bundles
+
+  watch-seeds-init:
+    image: bedasoftware/fhirsnake:latest
+    command:
+      - watch
+      - --external-fhir-server-url
+      - http://root:secret@devbox:8080/fhir
+      - --external-questionnaire-fce-fhir-converter-url
+      - http://questionnaire-fce-fhir-converter:3000/to-fhir
+    env_file:
+      - ./env/build-seeds
+    depends_on:
+      questionnaire-fce-fhir-converter:
+        condition: service_healthy
+    volumes:
+      - ./resources/init-seeds:/app/resources
+
+  sdc:
+    image: bedasoftware/fhir-sdc:2.1.0a6
+    depends_on:
+      devbox-healthcheck:
+        condition: service_healthy
+    links:
+      - devbox
+    env_file:
+      - ./env/sdc
