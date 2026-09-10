@@ -33,8 +33,3 @@ contrib/emr-config/config.js
 
 *storybook.log
 storybook-static
-
-# Backend (Docker) local state
-.env
-config/
-resources/init-bundles/*.json
