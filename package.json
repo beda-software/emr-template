@@ -28,7 +28,7 @@
         "@beda.software/fhir-questionnaire": "^0.1.0-alpha.3",
         "@beda.software/fhir-react": "^1.11.0",
         "@beda.software/remote-data": "^1.1.4",
-        "@beda.software/web-item-controls": "^0.1.14",
+        "@beda.software/web-item-controls": "^0.1.26",
         "@chromatic-com/storybook": "^1.6.1",
         "@lingui/cli": "^4.3.0",
         "@lingui/macro": "^4.3.0",

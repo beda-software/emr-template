@@ -1746,36 +1746,6 @@
     magic-string "^0.30.10"
     vue-tsc "2.0.19"
 
-"@beda.software/web-item-controls@^0.1.14":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@beda.software/web-item-controls/-/web-item-controls-0.1.14.tgz#772de2468154c49fa4b59adbd5938de259d36cef"
-  integrity sha512-Xrlv1zv+woshPD7OLDe92K53a36jiYwZkiMVjBHyhShTZsf63Vj5nYPKj8iUeHdSe0kQ6l0d3WjkYtyFJjO/4w==
-  dependencies:
-    "@ant-design/colors" "^7.0.0"
-    "@ant-design/icons" "^5.1.4"
-    "@beda.software/emr-config" "*"
-    "@beda.software/remote-data" "^1.1.4"
-    "@fullcalendar/core" "^6.1.15"
-    "@mdxeditor/editor" "^3.11.0"
-    aidbox-react "^1.11.2"
-    classnames "^2.3.2"
-    fhir "^4.10.3"
-    fhirpath "^3.18.0"
-    jose "^4.14.4"
-    lodash "^4.17.21"
-    moment "^2.29.4"
-    react-audio-voice-recorder "^2.2.0"
-    react-jsbarcode "1.0.1"
-    react-markdown "^9.0.1"
-    react-phone-input-2 "^2.15.1"
-    react-router-dom "^6.14.1"
-    react-select "^5.7.3"
-    recharts "^3.8.0"
-    rehype-raw "^7.0.0"
-    remark-directive "^4.0.0"
-    remark-gfm "^4.0.1"
-    yup "^1.7.0"
-
 "@beda.software/web-item-controls@^0.1.22":
   version "0.1.24"
   resolved "https://registry.yarnpkg.com/@beda.software/web-item-controls/-/web-item-controls-0.1.24.tgz#d10a85ed7296ea62e5de2e24d08e2a834678f167"
@@ -1802,6 +1772,37 @@
     react-select "^5.7.3"
     recharts "^3.8.0"
     rehype-raw "^7.0.0"
+    remark-directive "^4.0.0"
+    remark-gfm "^4.0.1"
+    yup "^1.7.0"
+
+"@beda.software/web-item-controls@^0.1.26":
+  version "0.1.26"
+  resolved "https://registry.yarnpkg.com/@beda.software/web-item-controls/-/web-item-controls-0.1.26.tgz#494c321e57f274ce46aef2063161e7f4c25fcdbc"
+  integrity sha512-5hqtSXooruGP4xCuTh/yAUBzuz+dYtPvUzXoSkSFJP21Ka7B02uIRUwWCaH/YR0M1BuYuyjHXVqQNliElkr6gQ==
+  dependencies:
+    "@ant-design/colors" "^7.0.0"
+    "@ant-design/icons" "^5.1.4"
+    "@beda.software/emr-config" "*"
+    "@beda.software/remote-data" "^1.1.4"
+    "@fullcalendar/core" "^6.1.15"
+    "@mdxeditor/editor" "^3.11.0"
+    aidbox-react "^1.11.2"
+    classnames "^2.3.2"
+    fhir "^4.10.3"
+    fhirpath "^3.18.0"
+    jose "^4.14.4"
+    lodash "^4.17.21"
+    moment "^2.29.4"
+    react-audio-voice-recorder "^2.2.0"
+    react-jsbarcode "1.0.1"
+    react-markdown "^9.0.1"
+    react-phone-input-2 "^2.15.1"
+    react-router-dom "^6.14.1"
+    react-select "^5.7.3"
+    recharts "^3.8.0"
+    rehype-raw "^7.0.0"
+    rehype-sanitize "^6.0.0"
     remark-directive "^4.0.0"
     remark-gfm "^4.0.1"
     yup "^1.7.0"
@@ -10770,6 +10771,15 @@ hast-util-raw@^9.0.0:
     web-namespaces "^2.0.0"
     zwitch "^2.0.0"
 
+hast-util-sanitize@^5.0.0:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/hast-util-sanitize/-/hast-util-sanitize-5.0.2.tgz#edb260d94e5bba2030eb9375790a8753e5bf391f"
+  integrity sha512-3yTWghByc50aGS7JlGhk61SPenfE/p1oaFeNwkOOyrscaOkMGrcW9+Cy/QAIOBpZxP1yqDIzFMR0+Np0i0+usg==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    "@ungap/structured-clone" "^1.0.0"
+    unist-util-position "^5.0.0"
+
 hast-util-to-jsx-runtime@^2.0.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/hast-util-to-jsx-runtime/-/hast-util-to-jsx-runtime-2.3.0.tgz#3ed27caf8dc175080117706bf7269404a0aa4f7c"
@@ -15317,6 +15327,14 @@ rehype-raw@^7.0.0:
     "@types/hast" "^3.0.0"
     hast-util-raw "^9.0.0"
     vfile "^6.0.0"
+
+rehype-sanitize@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/rehype-sanitize/-/rehype-sanitize-6.0.0.tgz#16e95f4a67a69cbf0f79e113c8e0df48203db73c"
+  integrity sha512-CsnhKNsyI8Tub6L4sm5ZFsme4puGfc6pYylvXo1AeqaGbjOYyzNv3qZPwvs0oMJ39eryyeOdmxwUIo94IpEhqg==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    hast-util-sanitize "^5.0.0"
 
 rehype-slug@^6.0.0:
   version "6.0.0"
