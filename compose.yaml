@@ -49,37 +49,47 @@ services:
     image: bedasoftware/fhirsnake:latest
     command:
       - export
+      - --input
+      - /app/resources/init-seeds
+      - --input
+      - /app/resources/demo-seeds
       - --output
-      - /app/init-bundles/initBundle.json
+      - /app/resources/init-bundles/initBundle.json
       - --external-questionnaire-fce-fhir-converter-url
       - http://questionnaire-fce-fhir-converter:3000/to-fhir
     env_file:
       - ./env/build-seeds
+      - ./env/build-seeds-demo
     depends_on:
       questionnaire-fce-fhir-converter:
         condition: service_healthy
     volumes:
-      - ./resources/init-seeds:/app/resources
-      - ./resources/init-bundles:/app/init-bundles
+      - ./resources:/app/resources
+      - ./resources/init-bundles:/app/resources/init-bundles
 
   watch-seeds-init:
     image: bedasoftware/fhirsnake:latest
     command:
       - watch
+      - --input
+      - /app/resources/init-seeds
+      - --input
+      - /app/resources/demo-seeds
       - --external-fhir-server-url
       - http://root:secret@devbox:8080/fhir
       - --external-questionnaire-fce-fhir-converter-url
       - http://questionnaire-fce-fhir-converter:3000/to-fhir
     env_file:
       - ./env/build-seeds
+      - ./env/build-seeds-demo
     depends_on:
       questionnaire-fce-fhir-converter:
         condition: service_healthy
     volumes:
-      - ./resources/init-seeds:/app/resources
+      - ./resources:/app/resources
 
   sdc:
-    image: bedasoftware/fhir-sdc:2.1.0a6
+    image: bedasoftware/fhir-sdc:2.4.2
     depends_on:
       devbox-healthcheck:
         condition: service_healthy

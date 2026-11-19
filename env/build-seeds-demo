@@ -1,0 +1,4 @@
+# Env for demo seeds (resources/demo-seeds), loaded together with init seeds.
+# Mirrors contrib/fhir-emr/env/build-seeds-demo; add template variables used by demo seeds here.
+
+FHIR_EMR_STAFF_PASSWORD="password"
